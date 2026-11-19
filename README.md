@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GARY — Merchant of Asphodel
 
-## Getting Started
+A frontend-only prototype for a local trading card marketplace. The visual direction uses an original dark, antique-inspired palette with a custom head emblem and vector hero illustration. The attached card artwork is not reused.
 
-First, run the development server:
+## Run locally
 
-```bash
+```powershell
+cd prototype
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Prototype flows
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Discover, search, filter, sort, and inspect local card listings.
+- Add listings to a cart and submit a purchase request with meetup or delivery preference.
+- Track and cancel eligible purchase requests.
+- Create and edit listings, remove listings while preserving order history, mark them sold, message sellers, and report a listing.
+- Confirm reports, listing removal or sale, request cancellations, and purchase requests in accessible modal dialogs.
 
-## Learn More
+All actions update in-memory frontend state only. Refreshing resets the demo data. There is no real authentication, messaging service, payment processing, or delivery integration.
 
-To learn more about Next.js, take a look at the following resources:
+## Domain-shaped mock data
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`src/data/mock-data.ts` keeps the diagram's entities in separate collections: `User`, `Profile`, `TCG`, `Set`, `Product`, `Listing`, `ListingImage`, `Rating`, `Message`, `Report`, `Cart`, `CartItem`, `Order`, `OrderItem`, `Transaction`, and `Fulfillment`. Relationship IDs link the records rather than flattening them into UI-specific product objects.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Seed listings use externally hosted images of real card prints from Scryfall, Pokémon TCG API, YGOPRODeck, and Limitless TCG. These images require an internet connection; user-created listings keep the built-in artwork fallback.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The demo `User.password` values are intentionally blank and are not used by the frontend. Never place real credentials in client-side data.
