@@ -1,0 +1,9 @@
+.next/
+node_modules/
+out/
+build/
+.vercel/
+*.tsbuildinfo
+.env*
+!.env.example
+npm-debug.log*
