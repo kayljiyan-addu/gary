@@ -46,7 +46,7 @@ $$;
 
 ## Deploy to Vercel
 
-Import the repository as a new Vercel project; Vercel detects the Next.js framework and uses `npm run build`. Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` to the Production, Preview, and Development environments that need Supabase, then deploy. Apply database migrations to the Supabase project before directing users to the deployment.
+Import the repository as a new Vercel project; Vercel detects the Next.js framework and uses `npm run build`. Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` to the Production, Preview, and Development environments that need Supabase, then deploy. Optionally set `NEXT_PUBLIC_SITE_URL` to the canonical production origin (for example, `https://your-domain.com`) so social preview image URLs use that domain; otherwise Vercel's deployment URL is used. Apply database migrations to the Supabase project before directing users to the deployment.
 
 ## Checks
 

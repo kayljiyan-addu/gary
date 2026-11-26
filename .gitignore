@@ -7,3 +7,7 @@ build/
 .env*
 !.env.example
 npm-debug.log*
+*.pdf
+inspo/
+icon.png
+color_scheme.png
